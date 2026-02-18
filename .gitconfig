@@ -1,0 +1,35 @@
+[alias]
+    br = branch
+    st = status
+    ci = commit
+    co = checkout
+    cp = cherry-pick
+    cc = cherry-pick --no-commit
+    cps = cherry-pick --empty=drop
+    ca = commit --amend
+    cn = commit --amend --no-edit
+    df = diff --name-only
+    dfs = diff --name-status
+    dfa = diff --name-only --diff-filter=A
+    dfd = diff --name-only --diff-filter=D
+    dfm = diff --name-only --diff-filter=M
+    d1 = diff HEAD^1
+    df1 = diff HEAD^1 --name-only
+    dfs1 = diff HEAD^1 --name-status
+    df1a = diff HEAD^1 --name-only --diff-filter=A
+    df1d = diff HEAD^1 --name-only --diff-filter=D
+    df1m = diff HEAD^1 --name-only --diff-filter=M
+    ro = rebase --onto
+    poh = push -f origin HEAD
+    kill = push -d origin
+    wipe = fetch --prune
+    dump = cat-file -p
+    type = cat-file -t
+    lo = log --oneline
+    loh = log --oneline -10
+    logr = log --oneline --grep
+    lol = log --oneline --graph --decorate --all
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    drop = !~/.git-helpers/drop.sh
+    join = !~/.git-helpers/join.sh
+    move = !~/.git-helpers/move.sh
