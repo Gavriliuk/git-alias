@@ -31,5 +31,6 @@
     lol = log --oneline --graph --decorate --all
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     drop = !~/.git-helpers/drop.sh
+    hide = !~/.git-helpers/hide.sh
     join = !~/.git-helpers/join.sh
     move = !~/.git-helpers/move.sh
