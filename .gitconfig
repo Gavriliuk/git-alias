@@ -34,3 +34,4 @@
     hide = !~/.git-helpers/hide.sh
     join = !~/.git-helpers/join.sh
     move = !~/.git-helpers/move.sh
+    trim = !~/.git-helpers/trim.sh
