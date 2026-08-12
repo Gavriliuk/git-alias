@@ -37,4 +37,5 @@
     hide = !~/.git-helpers/hide.sh
     join = !~/.git-helpers/join.sh
     move = !~/.git-helpers/move.sh
+    pick = !~/.git-helpers/pick.py
     trim = !~/.git-helpers/trim.sh
