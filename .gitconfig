@@ -28,6 +28,8 @@
     lo = log --oneline
     loh = log --oneline -10
     logr = log --oneline --grep
+    locf = log --grep '^. Conflicts:$'
+    loc = log --oneline --grep '^. Conflicts:$'
     lol = log --oneline --graph --decorate --all
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     drop = !~/.git-helpers/drop.sh
