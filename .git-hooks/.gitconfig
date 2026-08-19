@@ -1,0 +1,12 @@
+# Put this file into the root folder of your repository
+#
+# Brief:
+#  core.hooksPath tells git to search hooks in the given folder
+#  pick.filter tells pick.py to use pre-commit.exe to filter files
+#
+# To include the contents of this file to your .git/config
+# execute once: git config --local include.path ../.gitconfig
+[core]
+	hooksPath = .git-hooks
+[pick]
+	filter = .git-hooks/pre-commit.exe --filter
