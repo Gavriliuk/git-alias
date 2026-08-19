@@ -32,10 +32,10 @@
     loc = log --oneline --grep '^. Conflicts:$'
     lol = log --oneline --graph --decorate --all
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    drop = !~/.git-helpers/drop.sh
-    edit = !~/.git-helpers/edit.sh
-    hide = !~/.git-helpers/hide.sh
-    join = !~/.git-helpers/join.sh
-    move = !~/.git-helpers/move.sh
+    drop = !~/.git-helpers/git_history.py drop
+    edit = !~/.git-helpers/git_history.py edit
+    hide = !~/.git-helpers/git_history.py hide
+    join = !~/.git-helpers/git_history.py join
+    move = !~/.git-helpers/git_history.py move
+    trim = !~/.git-helpers/git_history.py trim
     pick = !~/.git-helpers/pick.py
-    trim = !~/.git-helpers/trim.sh
