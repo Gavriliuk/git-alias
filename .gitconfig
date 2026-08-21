@@ -37,5 +37,6 @@
     hide = !~/.git-helpers/git_history.py hide
     join = !~/.git-helpers/git_history.py join
     move = !~/.git-helpers/git_history.py move
+    take = !~/.git-helpers/git_history.py take
     trim = !~/.git-helpers/git_history.py trim
     pick = !~/.git-helpers/pick.py

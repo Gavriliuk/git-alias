@@ -10,13 +10,14 @@ The goal is not to hide Git behind another interface, but simply to make repetit
 
 ## History editing
 
-Six history-editing commands are implemented by a single Python helper, `.git-helpers/git_history.py`:
+Seven history-editing commands are implemented by a single Python helper, `.git-helpers/git_history.py`:
 
 - `git drop <commit>` — remove a commit from history.
 - `git edit <commit> "<message>"` — change a commit message.
 - `git hide <base> <head>` — absorb an older commit into a newer one.
 - `git join <base> <head>` — absorb a newer commit into an older one.
 - `git move <base> <head>` — move a newer commit down the history, immediately after `<base>`.
+- `git take` — amend staged changes into HEAD while preserving the original commit metadata.
 - `git trim <commit>` — reduce a commit message to its subject line.
 
 The helper rewrites linear history while preserving the original author/committer metadata and adjusting local tags to the rewritten history.

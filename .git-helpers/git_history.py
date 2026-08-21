@@ -1116,12 +1116,25 @@ def setup_hide(args: list[str]) -> int:
     return start_operation("hide", start, start, actions, tag_targets)
 
 
+def setup_take(args: list[str]) -> int:
+    if args:
+        raise GitFailure("Usage: git take", 2)
+    if has_unmerged_paths():
+        raise GitFailure("Conflicts are still unresolved", 2)
+    if not has_staged_changes():
+        raise GitFailure("No staged changes to take", 1)
+
+    amend_no_edit(resolve_commit("HEAD"))
+    return 0
+
+
 SETUP = {
     "drop": setup_drop,
     "edit": setup_edit,
     "hide": setup_hide,
     "join": setup_join,
     "move": setup_move,
+    "take": setup_take,
     "trim": setup_trim,
 }
 
@@ -1160,12 +1173,12 @@ if __name__ == "__main__":
     name = Path(sys.argv[0]).stem.lower()
     if name == "git_history":
         if len(sys.argv) < 2 or sys.argv[1] not in SETUP:
-            print("Usage: git_history.py <drop|edit|hide|join|move|trim> ...", file=sys.stderr)
+            print("Usage: git_history.py <drop|edit|hide|join|move|take|trim> ...", file=sys.stderr)
             sys.exit(2)
         sys.exit(main(sys.argv[1], sys.argv[2:]))
 
     command_name = name
     if command_name not in SETUP:
-        print("Run this module through drop.py/edit.py/hide.py/join.py/move.py/trim.py", file=sys.stderr)
+        print("Run this module through drop.py/edit.py/hide.py/join.py/move.py/take.py/trim.py", file=sys.stderr)
         sys.exit(2)
     sys.exit(main(command_name))
